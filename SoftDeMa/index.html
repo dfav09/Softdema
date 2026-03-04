@@ -471,341 +471,341 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20 scroll-reveal">
-                <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Pricing" data-es="Precios">Pricing</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6" data-en="Transparent pricing for every stage" data-es="Precios transparentes para cada etapa">
-                    Transparent pricing for every stage</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8" data-en="Choose your billing preference." data-es="Elige tu preferencia de facturación.">
-                    Choose your billing preference.</p>
+<section id="pricing" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20 scroll-reveal">
+            <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Pricing" data-es="Precios">Pricing</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6" data-en="Transparent pricing for every stage" data-es="Precios transparentes para cada etapa">
+                Transparent pricing for every stage</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8" data-en="Choose your billing preference." data-es="Elige tu preferencia de facturación.">
+                Choose your billing preference.</p>
 
-                <!-- TOGGLE ONE-TIME / MONTHLY -->
-                <div class="inline-flex items-center gap-2 p-1.5 rounded-full glass-card relative">
-                    <button class="pricing-toggle-btn active relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-onetime" onclick="setPricingMode('onetime')">
-                        <span data-en="One-time" data-es="Único">One-time</span>
-                    </button>
-                    <button class="pricing-toggle-btn relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-monthly" onclick="setPricingMode('monthly')">
-                        <span data-en="Monthly" data-es="Mensual">Monthly</span>
-                        <span class="badge-save" data-en="Save 20%" data-es="Ahorra 20%">Save 20%</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Grid de 3 Cards -->
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-
-                <!-- CARD 1: STARTER -->
-                <div class="flip-card scroll-reveal" id="card-starter">
-                    <div class="flip-card-inner">
-                        <!-- FRENTE -->
-                        <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                                    <i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display text-lg font-bold">Starter</h3>
-                                    <p class="text-xs text-gray-500" data-en="For small projects" data-es="Para proyectos pequeños">For small projects</p>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$499" data-monthly="$149">$499</span>
-                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
-                            </div>
-
-                            <ul class="space-y-3 mb-6 flex-grow">
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                    <span data-en="Professional landing page" data-es="Landing page profesional">Professional landing page</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                    <span data-en="Responsive design" data-es="Diseño responsive">Responsive design</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                    <span data-en="Basic SEO setup" data-es="SEO básico">Basic SEO setup</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                    <span data-en="Social media integration" data-es="Integración redes sociales">Social media integration</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-500">
-                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
-                                    <span data-en="Delivery: 9 days" data-es="Entrega: 9 días">Delivery: 9 days</span>
-                                </li>
-                            </ul>
-
-                            <div class="flex gap-2 mt-auto">
-                                <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('starter')">
-                                    <span data-en="Details" data-es="Detalles">Details</span>
-                                </button>
-                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
-                                    <span data-en="Get Started" data-es="Empezar">Get Started</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- REVERSO -->
-                        <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-emerald-500/30 flex flex-col relative">
-                            <div class="flex justify-between items-start mb-4">
-                                <h3 class="font-display text-lg font-bold text-emerald-400" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
-                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('starter')">
-                                    <i data-lucide="x" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-
-                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
-                                <p class="text-sm" data-en="Perfect for startups looking to establish their online presence quickly." data-es="Perfecto para startups que buscan establecer su presencia online rápidamente.">
-                                    Perfect for startups looking to establish their online presence quickly.
-                                </p>
-
-                                <div class="glass-card rounded-lg p-3 bg-emerald-500/5 border-emerald-500/20">
-                                    <h4 class="font-semibold mb-1 text-emerald-400 text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
-                                    <ul class="space-y-2 text-xs mt-2">
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                                            <span data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                                            <span data-en="Source files delivered" data-es="Archivos fuente entregados">Source files delivered</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                                            <span data-en="30 days support" data-es="30 días de soporte">30 days support</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <button class="w-full py-2.5 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/30 transition-all mt-auto" onclick="flipCard('starter')">
-                                <span data-en="Back" data-es="Volver">Back</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CARD 2: GROWTH (MOST POPULAR) -->
-                <div class="flip-card scroll-reveal" id="card-growth">
-                    <div class="flip-card-inner">
-                        <!-- FRENTE -->
-                        <div class="flip-card-front pricing-card popular glass-card rounded-3xl p-6 flex flex-col relative">
-                            <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
-
-                            <div class="flex items-center gap-3 mb-4 mt-2">
-                                <div class="w-10 h-10 rounded-xl bg-brand-blue/20 flex items-center justify-center">
-                                    <i data-lucide="trending-up" class="w-5 h-5 text-brand-blue"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display text-lg font-bold">Growth</h3>
-                                    <p class="text-xs text-gray-500" data-en="For growing businesses" data-es="Para negocios en crecimiento">For growing businesses</p>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <span class="price-display text-3xl font-display font-bold gradient-text" data-onetime="$999" data-monthly="$299">$999</span>
-                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
-                            </div>
-
-                            <ul class="space-y-3 mb-6 flex-grow">
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
-                                    <span data-en="Website up to 5 pages" data-es="Website hasta 5 páginas">Website up to 5 pages</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
-                                    <span data-en="Basic branding package" data-es="Branding básico">Basic branding package</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
-                                    <span data-en="Advanced SEO optimization" data-es="Optimización SEO avanzada">Advanced SEO optimization</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
-                                    <span data-en="Modern animations" data-es="Animaciones modernas">Modern animations</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
-                                    <span data-en="Form integrations" data-es="Integración formularios">Form integrations</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-500">
-                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
-                                    <span data-en="Delivery: 18 days" data-es="Entrega: 18 días">Delivery: 18 days</span>
-                                </li>
-                            </ul>
-
-                            <div class="flex gap-2 mt-auto">
-                                <button class="flex-1 py-2.5 px-4 rounded-full border border-brand-cyan/30 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/10 transition-all" onclick="flipCard('growth')">
-                                    <span data-en="Details" data-es="Detalles">Details</span>
-                                </button>
-                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
-                                    <span class="btn-text" data-en="Get Started" data-es="Empezar">Get Started</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- REVERSO -->
-                        <div class="flip-card-back pricing-card popular glass-card rounded-3xl p-6 border-2 border-brand-cyan/30 flex flex-col relative">
-                            <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
-
-                            <div class="flex justify-between items-start mb-4 mt-2">
-                                <h3 class="font-display text-lg font-bold text-brand-cyan" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
-                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('growth')">
-                                    <i data-lucide="x" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-
-                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
-                                <p class="text-sm" data-en="Ideal for businesses ready to scale with a professional multi-page website." data-es="Ideal para negocios listos para escalar con website profesional.">
-                                    Ideal for businesses ready to scale with a professional multi-page website.
-                                </p>
-
-                                <div class="glass-card rounded-lg p-3 bg-brand-cyan/5 border-brand-cyan/20">
-                                    <h4 class="font-semibold mb-1 text-brand-cyan text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
-                                    <ul class="space-y-2 text-xs mt-2">
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
-                                            <span data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
-                                            <span data-en="Brand style guide" data-es="Guía de estilo de marca">Brand style guide</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
-                                            <span data-en="60 days support" data-es="60 días de soporte">60 days support</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
-                                            <span data-en="Analytics setup" data-es="Configuración de analytics">Analytics setup</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <button class="w-full py-2.5 rounded-full bg-brand-cyan/20 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/30 transition-all mt-auto" onclick="flipCard('growth')">
-                                <span data-en="Back" data-es="Volver">Back</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CARD 3: SCALE -->
-                <div class="flip-card scroll-reveal" id="card-scale">
-                    <div class="flip-card-inner">
-                        <!-- FRENTE -->
-                        <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 rounded-xl bg-brand-violet/20 flex items-center justify-center">
-                                    <i data-lucide="crown" class="w-5 h-5 text-brand-violet"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-display text-lg font-bold">Scale</h3>
-                                    <p class="text-xs text-gray-500" data-en="For enterprises" data-es="Para empresas">For enterprises</p>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$1,799" data-monthly="$549">$1,799</span>
-                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
-                            </div>
-
-                            <ul class="space-y-3 mb-6 flex-grow">
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
-                                    <span data-en="Advanced web development" data-es="Desarrollo web avanzado">Advanced web development</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
-                                    <span data-en="Custom UI/UX design" data-es="UI/UX personalizado">Custom UI/UX design</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
-                                    <span data-en="Process automations" data-es="Automatizaciones">Process automations</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
-                                    <span data-en="Admin dashboard" data-es="Panel administrativo">Admin dashboard</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm">
-                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
-                                    <span data-en="API integrations" data-es="Integraciones API">API integrations</span>
-                                </li>
-                                <li class="flex items-center gap-2 text-sm text-gray-500">
-                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
-                                    <span data-en="Custom timeline" data-es="Cronograma personalizado">Custom timeline</span>
-                                </li>
-                            </ul>
-
-                            <div class="flex gap-2 mt-auto">
-                                <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('scale')">
-                                    <span data-en="Details" data-es="Detalles">Details</span>
-                                </button>
-                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
-                                    <span data-en="Contact Sales" data-es="Contactar Ventas">Contact Sales</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- REVERSO -->
-                        <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-brand-violet/30 flex flex-col relative">
-                            <div class="flex justify-between items-start mb-4">
-                                <h3 class="font-display text-lg font-bold text-brand-violet" data-en="Enterprise Features" data-es="Características Enterprise">Enterprise Features</h3>
-                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('scale')">
-                                    <i data-lucide="x" class="w-4 h-4"></i>
-                                </button>
-                            </div>
-
-                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
-                                <p class="text-sm" data-en="Enterprise-grade solution for businesses requiring advanced functionality." data-es="Solución empresarial para negocios que requieren funcionalidad avanzada.">
-                                    Enterprise-grade solution for businesses requiring advanced functionality.
-                                </p>
-
-                                <div class="glass-card rounded-lg p-3 bg-brand-violet/5 border-brand-violet/20">
-                                    <h4 class="font-semibold mb-1 text-brand-violet text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
-                                    <ul class="space-y-2 text-xs mt-2">
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
-                                            <span data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
-                                            <span data-en="Complete brand book" data-es="Brand book completo">Complete brand book</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
-                                            <span data-en="1 year priority support" data-es="1 año soporte prioritario">1 year priority support</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
-                                            <span data-en="Training sessions" data-es="Sesiones de capacitación">Training sessions</span>
-                                        </li>
-                                        <li class="flex items-center gap-2">
-                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
-                                            <span data-en="Source code ownership" data-es="Propiedad del código fuente">Source code ownership</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <button class="w-full py-2.5 rounded-full bg-brand-violet/20 text-brand-violet text-sm font-semibold hover:bg-brand-violet/30 transition-all mt-auto" onclick="flipCard('scale')">
-                                <span data-en="Back" data-es="Volver">Back</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-12 text-center">
-                <p class="text-gray-500 text-sm" data-en="Need something custom?" data-es="¿Necesitas algo personalizado?">Need something custom?</p>
-                <a href="#contact" class="text-brand-cyan hover:underline text-sm font-medium mt-1 inline-block" data-en="Let's talk about your project →" data-es="Hablemos de tu proyecto →">Let's talk about your project →</a>
+            <!-- TOGGLE ONE-TIME / MONTHLY -->
+            <div class="inline-flex items-center gap-2 p-1.5 rounded-full glass-card relative">
+                <button class="pricing-toggle-btn active relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-onetime" onclick="setPricingMode('onetime')">
+                    <span data-en="One-time" data-es="Único">One-time</span>
+                </button>
+                <button class="pricing-toggle-btn relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-monthly" onclick="setPricingMode('monthly')">
+                    <span data-en="Monthly" data-es="Mensual">Monthly</span>
+                    <span class="badge-save" data-en="Save 20%" data-es="Ahorra 20%">Save 20%</span>
+                </button>
             </div>
         </div>
-    </section>
+
+        <!-- Grid de 3 Cards -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+
+            <!-- CARD 1: STARTER -->
+            <div class="flip-card scroll-reveal" id="card-starter">
+                <div class="flip-card-inner">
+                    <!-- FRENTE -->
+                    <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold">Starter</h3>
+                                <p class="text-xs text-gray-500" data-en="For small projects" data-es="Para proyectos pequeños">For small projects</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$499" data-monthly="$149">$499</span>
+                            <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                        </div>
+
+                        <ul class="space-y-3 mb-6 flex-grow">
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                <span data-en="Professional landing page" data-es="Landing page profesional">Professional landing page</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                <span data-en="Responsive design" data-es="Diseño responsive">Responsive design</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                <span data-en="Basic SEO setup" data-es="SEO básico">Basic SEO setup</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                <span data-en="Social media integration" data-es="Integración redes sociales">Social media integration</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                <span data-en="Delivery: 9 days" data-es="Entrega: 9 días">Delivery: 9 days</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex gap-2 mt-auto">
+                            <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('starter')">
+                                <span data-en="Details" data-es="Detalles">Details</span>
+                            </button>
+                            <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                <span data-en="Get Started" data-es="Empezar">Get Started</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-emerald-500/30 flex flex-col relative">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-lg font-bold text-emerald-400" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
+                            <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('starter')">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                            <p class="text-sm" data-en="Perfect for startups looking to establish their online presence quickly." data-es="Perfecto para startups que buscan establecer su presencia online rápidamente.">
+                                Perfect for startups looking to establish their online presence quickly.
+                            </p>
+
+                            <div class="glass-card rounded-lg p-3 bg-emerald-500/5 border-emerald-500/20">
+                                <h4 class="font-semibold mb-1 text-emerald-400 text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                <ul class="space-y-2 text-xs mt-2">
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                        <span data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                        <span data-en="Source files delivered" data-es="Archivos fuente entregados">Source files delivered</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                        <span data-en="30 days support" data-es="30 días de soporte">30 days support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2.5 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/30 transition-all mt-auto" onclick="flipCard('starter')">
+                            <span data-en="Back" data-es="Volver">Back</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2: GROWTH (MOST POPULAR) -->
+            <div class="flip-card scroll-reveal" id="card-growth">
+                <div class="flip-card-inner">
+                    <!-- FRENTE -->
+                    <div class="flip-card-front pricing-card popular glass-card rounded-3xl p-6 flex flex-col relative">
+                        <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
+
+                        <div class="flex items-center gap-3 mb-4 mt-2">
+                            <div class="w-10 h-10 rounded-xl bg-brand-blue/20 flex items-center justify-center">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-brand-blue"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold">Growth</h3>
+                                <p class="text-xs text-gray-500" data-en="For growing businesses" data-es="Para negocios en crecimiento">For growing businesses</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="price-display text-3xl font-display font-bold gradient-text" data-onetime="$999" data-monthly="$299">$999</span>
+                            <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                        </div>
+
+                        <ul class="space-y-3 mb-6 flex-grow">
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                <span data-en="Website up to 5 pages" data-es="Website hasta 5 páginas">Website up to 5 pages</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                <span data-en="Basic branding package" data-es="Branding básico">Basic branding package</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                <span data-en="Advanced SEO optimization" data-es="Optimización SEO avanzada">Advanced SEO optimization</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                <span data-en="Modern animations" data-es="Animaciones modernas">Modern animations</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                <span data-en="Form integrations" data-es="Integración formularios">Form integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                <span data-en="Delivery: 18 days" data-es="Entrega: 18 días">Delivery: 18 days</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex gap-2 mt-auto">
+                            <button class="flex-1 py-2.5 px-4 rounded-full border border-brand-cyan/30 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/10 transition-all" onclick="flipCard('growth')">
+                                <span data-en="Details" data-es="Detalles">Details</span>
+                            </button>
+                            <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                <span class="btn-text" data-en="Get Started" data-es="Empezar">Get Started</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back pricing-card popular glass-card rounded-3xl p-6 border-2 border-brand-cyan/30 flex flex-col relative">
+                        <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
+
+                        <div class="flex justify-between items-start mb-4 mt-2">
+                            <h3 class="font-display text-lg font-bold text-brand-cyan" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
+                            <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('growth')">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                            <p class="text-sm" data-en="Ideal for businesses ready to scale with a professional multi-page website." data-es="Ideal para negocios listos para escalar con website profesional.">
+                                Ideal for businesses ready to scale with a professional multi-page website.
+                            </p>
+
+                            <div class="glass-card rounded-lg p-3 bg-brand-cyan/5 border-brand-cyan/20">
+                                <h4 class="font-semibold mb-1 text-brand-cyan text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                <ul class="space-y-2 text-xs mt-2">
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                        <span data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                        <span data-en="Brand style guide" data-es="Guía de estilo de marca">Brand style guide</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                        <span data-en="60 days support" data-es="60 días de soporte">60 days support</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                        <span data-en="Analytics setup" data-es="Configuración de analytics">Analytics setup</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2.5 rounded-full bg-brand-cyan/20 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/30 transition-all mt-auto" onclick="flipCard('growth')">
+                            <span data-en="Back" data-es="Volver">Back</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: SCALE -->
+            <div class="flip-card scroll-reveal" id="card-scale">
+                <div class="flip-card-inner">
+                    <!-- FRENTE -->
+                    <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-violet/20 flex items-center justify-center">
+                                <i data-lucide="crown" class="w-5 h-5 text-brand-violet"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-lg font-bold">Scale</h3>
+                                <p class="text-xs text-gray-500" data-en="For enterprises" data-es="Para empresas">For enterprises</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$1,799" data-monthly="$549">$1,799</span>
+                            <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                        </div>
+
+                        <ul class="space-y-3 mb-6 flex-grow">
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                <span data-en="Advanced web development" data-es="Desarrollo web avanzado">Advanced web development</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                <span data-en="Custom UI/UX design" data-es="UI/UX personalizado">Custom UI/UX design</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                <span data-en="Process automations" data-es="Automatizaciones">Process automations</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                <span data-en="Admin dashboard" data-es="Panel administrativo">Admin dashboard</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                <span data-en="API integrations" data-es="Integraciones API">API integrations</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-gray-500">
+                                <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                <span data-en="Custom timeline" data-es="Cronograma personalizado">Custom timeline</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex gap-2 mt-auto">
+                            <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('scale')">
+                                <span data-en="Details" data-es="Detalles">Details</span>
+                            </button>
+                            <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                <span data-en="Contact Sales" data-es="Contactar Ventas">Contact Sales</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- REVERSO -->
+                    <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-brand-violet/30 flex flex-col relative">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-lg font-bold text-brand-violet" data-en="Enterprise Features" data-es="Características Enterprise">Enterprise Features</h3>
+                            <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('scale')">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                            <p class="text-sm" data-en="Enterprise-grade solution for businesses requiring advanced functionality." data-es="Solución empresarial para negocios que requieren funcionalidad avanzada.">
+                                Enterprise-grade solution for businesses requiring advanced functionality.
+                            </p>
+
+                            <div class="glass-card rounded-lg p-3 bg-brand-violet/5 border-brand-violet/20">
+                                <h4 class="font-semibold mb-1 text-brand-violet text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                <ul class="space-y-2 text-xs mt-2">
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                        <span data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                        <span data-en="Complete brand book" data-es="Brand book completo">Complete brand book</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                        <span data-en="1 year priority support" data-es="1 año soporte prioritario">1 year priority support</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                        <span data-en="Training sessions" data-es="Sesiones de capacitación">Training sessions</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                        <span data-en="Source code ownership" data-es="Propiedad del código fuente">Source code ownership</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-2.5 rounded-full bg-brand-violet/20 text-brand-violet text-sm font-semibold hover:bg-brand-violet/30 transition-all mt-auto" onclick="flipCard('scale')">
+                            <span data-en="Back" data-es="Volver">Back</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-500 text-sm" data-en="Need something custom?" data-es="¿Necesitas algo personalizado?">Need something custom?</p>
+            <a href="#contact" class="text-brand-cyan hover:underline text-sm font-medium mt-1 inline-block" data-en="Let's talk about your project →" data-es="Hablemos de tu proyecto →">Let's talk about your project →</a>
+        </div>
+    </div>
+</section>
 
     <!-- Process Section -->
     <section id="process" class="py-32 relative overflow-hidden">
