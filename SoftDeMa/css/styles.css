@@ -120,6 +120,7 @@ body {
     cursor: pointer;
     z-index: 1;
 }
+
 .pricing-toggle-btn.active {
     background: linear-gradient(135deg, #06b6d4, #3b82f6);
     color: white;
@@ -141,6 +142,7 @@ body {
     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
     z-index: 10;
 }
+
 /* Asegurar que el botón monthly tenga posición relativa para el badge */
 #btn-monthly {
     position: relative;
@@ -385,6 +387,7 @@ body {
     background: rgba(6, 182, 212, 0.25);
     color: white;
 }
+
 /* Asegurar que las cards se vean bien sin toggle */
 .pricing-card .text-emerald-400,
 .pricing-card .text-brand-cyan,
