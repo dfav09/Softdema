@@ -1,0 +1,106 @@
+/* ============================================
+   PRICING CARDS - BOTONES SIEMPRE ABAJO
+   ============================================ */
+
+.pricing-card {
+  height: 100%;
+  min-height: 500px; /* Reducido */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja todo hacia arriba y botones abajo */
+  padding: 2rem;
+  position: relative;
+}
+
+/* Contenedor del contenido superior */
+.pricing-card > div:first-child {
+  flex: 0 0 auto; /* Header no crece */
+}
+
+/* Lista de features - crece para llenar espacio */
+.pricing-card ul {
+  flex: 1 1 auto; /* Crece para empujar botones abajo */
+  margin-bottom: 1.5rem;
+  overflow-y: auto; /* Scroll si hay mucho texto */
+  max-height: 280px; /* Máximo para no estirar */
+}
+
+/* Contenedor de botones - siempre abajo */
+.pricing-card .button-group,
+.pricing-card > div:last-child,
+.pricing-card > button:last-child,
+.pricing-card > .flex:last-child {
+  flex: 0 0 auto; /* No crece, se queda abajo */
+  margin-top: auto; /* Empuja hacia abajo */
+  width: 100%;
+}
+
+/* Estructura específica para front y back */
+.flip-card-front .pricing-card,
+.flip-card-back .pricing-card {
+  justify-content: flex-start; /* Empieza desde arriba */
+}
+
+/* El último elemento (botones) se pega abajo */
+.flip-card-front .pricing-card > *:last-child,
+.flip-card-back .pricing-card > *:last-child {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+
+
+
+/* ============================================
+   PRICING CARDS
+   ============================================ */
+.pricing-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--brand-cyan);
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.popular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Badge Most Popular */
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+  white-space: nowrap;
+}

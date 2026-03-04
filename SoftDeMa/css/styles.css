@@ -1,0 +1,405 @@
+/* ============================================
+   SOFTDEMA - CUSTOM STYLES (CORREGIDO)
+   ============================================ */
+
+:root {
+    --brand-cyan: #06B6D4;
+    --brand-blue: #3B82F6;
+    --brand-violet: #8B5CF6;
+    --bg-primary: #0B0F19;
+    --bg-card: rgba(31, 41, 55, 0.7);
+    --text-white: #F9FAFB;
+    --text-gray: #9CA3AF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Glass Card */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue), var(--brand-violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Language Toggle */
+.language-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.language-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.lang-option {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-gray);
+    padding: 6px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    min-width: 32px;
+    text-align: center;
+}
+
+.lang-option.active {
+    color: var(--bg-primary);
+}
+
+.lang-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
+    border-radius: 20px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.language-toggle-btn[data-lang="es"] .lang-slider {
+    transform: translateX(100%);
+}
+
+/* Pricing Toggle */
+.pricing-toggle-btn {
+    position: relative;
+    background: transparent;
+    color: #9ca3af;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+.pricing-toggle-btn.active {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
+}
+
+
+.badge-save {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #10b981;
+    color: white;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+    z-index: 10;
+}
+/* Asegurar que el botón monthly tenga posición relativa para el badge */
+#btn-monthly {
+    position: relative;
+    margin-right: 10px;
+}
+
+/* ============================================
+   FLIP CARDS - CORREGIDO
+   ============================================ */
+
+.flip-card {
+    perspective: 1000px;
+    height: 480px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Grid stretch */
+.grid.items-stretch>* {
+    display: flex;
+}
+
+.grid.items-stretch .flip-card {
+    width: 100%;
+}
+
+/* ============================================
+   PRICING CARDS
+   ============================================ */
+
+.pricing-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.pricing-card ul {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.pricing-card .mt-auto {
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Badge */
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* BORDE DEL MISMO COLOR QUE EL BADGE (Growth plan) */
+.pricing-card.popular {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+        linear-gradient(135deg, var(--brand-cyan), var(--brand-blue)) border-box;
+    padding-top: 1.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.25);
+}
+
+/* Hero */
+.hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* Grid Pattern */
+.grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+/* Noise */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Process Line */
+.process-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand-cyan), var(--brand-blue), var(--brand-violet));
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .process-line {
+        left: 24px;
+    }
+}
+
+/* Scroll Reveal */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Nav Link */
+.nav-link {
+    position: relative;
+    color: var(--text-gray);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-white);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Service Card */
+.service-card {
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(6, 182, 212, 0.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-cyan);
+}
+
+/* Selection */
+::selection {
+    background: rgba(6, 182, 212, 0.25);
+    color: white;
+}
+/* Asegurar que las cards se vean bien sin toggle */
+.pricing-card .text-emerald-400,
+.pricing-card .text-brand-cyan,
+.pricing-card .text-brand-violet {
+    font-weight: 600;
+}
+
+/* Estilo específico para el badge de ahorro */
+.save-badge {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}

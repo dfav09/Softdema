@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftDeMA — Software, Design & Marketing | Digital Growth Agency</title>
+    <meta name="description"
+        content="SoftDeMA builds digital growth through web development, apps, branding, and marketing automation. Premium tech solutions for international clients.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#06B6D4',
+                            blue: '#3B82F6',
+                            violet: '#8B5CF6',
+                        },
+                        dark: {
+                            bg: '#0B0F19',
+                            card: 'rgba(31, 41, 55, 0.7)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans antialiased">
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center">
+                        <span class="font-display font-bold text-white text-lg">S</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-xl tracking-tight">SoftDeMA</span>
+                        <span class="text-xs text-gray-500 tracking-wider">SOFTWARE • DESIGN • MARKETING</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                        data-en="Services" data-es="Servicios">Services</a>
+                    <a href="#why-us"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                        data-en="Why Us" data-es="Por Qué Nosotros">Why Us</a>
+                    <a href="#pricing"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                        data-en="Pricing" data-es="Precios">Pricing</a>
+                    <a href="#process"
+                        class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                        data-en="Process" data-es="Proceso">Process</a>
+                </div>
+
+                <!-- Right Side -->
+                <div class="flex items-center gap-6">
+                    <!-- Language Toggle (Dentro del botón) -->
+                    <button class="language-toggle-btn" id="langToggle" onclick="toggleLanguage()">
+                        <span class="lang-option" data-lang="en">EN</span>
+                        <div class="lang-slider"></div>
+                        <span class="lang-option" data-lang="es">ES</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#contact"
+                        class="hidden md:inline-flex btn-primary px-6 py-2.5 rounded-full text-sm font-semibold text-white">
+                        <span data-en="Get Started" data-es="Empezar">Get Started</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card border-t border-white/10">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#services" class="block text-gray-400 hover:text-white py-2" data-en="Services"
+                    data-es="Servicios">Services</a>
+                <a href="#why-us" class="block text-gray-400 hover:text-white py-2" data-en="Why Us"
+                    data-es="Por Qué Nosotros">Why Us</a>
+                <a href="#pricing" class="block text-gray-400 hover:text-white py-2" data-en="Pricing"
+                    data-es="Precios">Pricing</a>
+                <a href="#process" class="block text-gray-400 hover:text-white py-2" data-en="Process"
+                    data-es="Proceso">Process</a>
+                <a href="#contact" class="block btn-primary text-center py-3 rounded-full mt-4" data-en="Get Started"
+                    data-es="Empezar">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
+        <div class="hero-glow top-1/4 left-1/4"></div>
+        <div class="hero-glow bottom-1/4 right-1/4" style="animation-delay: -4s;"></div>
+
+        <div
+            class="absolute top-20 right-10 w-20 h-20 border border-brand-cyan/20 rounded-full animate-float opacity-20">
+        </div>
+        <div class="absolute bottom-40 left-10 w-32 h-32 border border-brand-blue/20 rounded-full animate-float opacity-20"
+            style="animation-delay: -2s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="scroll-reveal">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border border-brand-cyan/30">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+                    <span class="text-sm font-medium text-brand-cyan" data-en="Available for new projects"
+                        data-es="Disponible para nuevos proyectos">Available for new projects</span>
+                </div>
+
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                    <span class="block text-white">We build</span>
+                    <span class="gradient-text">digital growth.</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 font-light"
+                    data-en="Websites, apps, and digital branding that scale your business internationally."
+                    data-es="Websites, apps y branding digital que escalan tu negocio internacionalmente.">
+                    Websites, apps, and digital branding that scale your business internationally.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact"
+                        class="btn-primary px-8 py-4 rounded-full text-lg font-semibold text-white inline-flex items-center gap-2">
+                        <span data-en="Get a Free Consultation" data-es="Consulta Gratis">Get a Free Consultation</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#services"
+                        class="px-8 py-4 rounded-full text-lg font-semibold text-white border border-white/20 hover:bg-white/5 transition-all inline-flex items-center gap-2">
+                        <span data-en="Explore Services" data-es="Explorar Servicios">Explore Services</span>
+                    </a>
+                </div>
+
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-display font-bold gradient-text">50+</div>
+                        <div class="text-sm text-gray-500 mt-1" data-en="Projects Delivered"
+                            data-es="Proyectos Entregados">Projects Delivered</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-display font-bold gradient-text">98%</div>
+                        <div class="text-sm text-gray-500 mt-1" data-en="Client Satisfaction"
+                            data-es="Satisfacción Cliente">Client Satisfaction</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-display font-bold gradient-text">2</div>
+                        <div class="text-sm text-gray-500 mt-1" data-en="Countries Active" data-es="Países Activos">
+                            Countries Active</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-display font-bold gradient-text">24/7</div>
+                        <div class="text-sm text-gray-500 mt-1" data-en="Support" data-es="Soporte">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 scroll-reveal">
+                <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Our Services"
+                    data-es="Nuestros Servicios">Our Services</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
+                    data-en="Everything you need to grow digitally"
+                    data-es="Todo lo que necesitas para crecer digitalmente">Everything you need to grow digitally</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg"
+                    data-en="End-to-end digital solutions designed for international scalability."
+                    data-es="Soluciones digitales integrales diseñadas para escalabilidad internacional.">End-to-end
+                    digital solutions designed for international scalability.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Web Development -->
+                <div class="service-card glass-card rounded-2xl p-8 scroll-reveal">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-blue to-brand-cyan flex items-center justify-center mb-6">
+                        <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3" data-en="Web Development" data-es="Desarrollo Web">
+                        Web Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4"
+                        data-en="Custom websites built with modern technologies. Responsive, fast, and SEO-optimized for global reach."
+                        data-es="Websites personalizados construidos con tecnologías modernas. Responsivos, rápidos y optimizados para SEO global.">
+                        Custom websites built with modern technologies. Responsive, fast, and SEO-optimized for global
+                        reach.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">React</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Next.js</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Webflow</span>
+                    </div>
+                </div>
+
+                <!-- App Development -->
+                <div class="service-card glass-card rounded-2xl p-8 scroll-reveal">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-violet to-pink-500 flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3" data-en="App Development"
+                        data-es="Desarrollo de Apps">App Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4"
+                        data-en="Progressive web applications and mobile solutions that deliver exceptional user experiences across all devices."
+                        data-es="Aplicaciones web progresivas y soluciones móviles que ofrecen experiencias excepcionales en todos los dispositivos.">
+                        Progressive web applications and mobile solutions that deliver exceptional user experiences
+                        across all devices.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">PWA</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">React Native</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Flutter</span>
+                    </div>
+                </div>
+
+                <!-- Branding -->
+                <div class="service-card glass-card rounded-2xl p-8 scroll-reveal">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-6">
+                        <i data-lucide="palette" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3" data-en="Branding & Design"
+                        data-es="Branding y Diseño">Branding & Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4"
+                        data-en="Strategic brand identity and UI/UX design that differentiates your business in competitive international markets."
+                        data-es="Identidad de marca estratégica y diseño UI/UX que diferencia tu negocio en mercados internacionales competitivos.">
+                        Strategic brand identity and UI/UX design that differentiates your business in competitive
+                        international markets.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">UI/UX</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Identity</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Motion</span>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="service-card glass-card rounded-2xl p-8 scroll-reveal">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3" data-en="Marketing & Automation"
+                        data-es="Marketing y Automatización">Marketing & Automation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4"
+                        data-en="Social media management and workflow automation that scales your operations while maintaining personal touch."
+                        data-es="Gestión de redes sociales y automatización de flujos de trabajo que escalan tus operaciones manteniendo el toque personal.">
+                        Social media management and workflow automation that scales your operations while maintaining
+                        personal touch.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">Social</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">CRM</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Why SoftDeMA"
+                        data-es="Por Qué SoftDeMA">Why SoftDeMA</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
+                        data-en="Built for international growth from day one"
+                        data-es="Construido para crecimiento internacional desde el día uno">Built for international
+                        growth from day one</h2>
+                    <p class="text-gray-400 text-lg mb-8"
+                        data-en="We combine Silicon Valley aesthetics with Latin American agility to deliver premium digital products at competitive rates."
+                        data-es="Combinamos estética de Silicon Valley con agilidad latinoamericana para entregar productos digitales premium a tarifas competitivas.">
+                        We combine Silicon Valley aesthetics with Latin American agility to deliver premium digital
+                        products at competitive rates.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="rocket" class="w-6 h-6 text-brand-cyan"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" data-en="Modern Design Approach"
+                                    data-es="Enfoque de Diseño Moderno">Modern Design Approach</h4>
+                                <p class="text-gray-400 text-sm"
+                                    data-en="Cutting-edge aesthetics following the latest UX trends and interaction patterns."
+                                    data-es="Estética de vanguardia siguiendo las últimas tendencias de UX y patrones de interacción.">
+                                    Cutting-edge aesthetics following the latest UX trends and interaction patterns.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="timer" class="w-6 h-6 text-brand-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" data-en="Fast Delivery" data-es="Entrega Rápida">
+                                    Fast Delivery</h4>
+                                <p class="text-gray-400 text-sm"
+                                    data-en="Agile methodology with clear milestones. Get your MVP in days, not months."
+                                    data-es="Metodología ágil con hitos claros. Obtén tu MVP en días, no meses.">Agile
+                                    methodology with clear milestones. Get your MVP in days, not months.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-brand-violet/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-brand-violet"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" data-en="Scalable Solutions"
+                                    data-es="Soluciones Escalables">Scalable Solutions</h4>
+                                <p class="text-gray-400 text-sm"
+                                    data-en="Architecture designed to grow with your business from startup to enterprise."
+                                    data-es="Arquitectura diseñada para crecer con tu negocio desde startup hasta empresa.">
+                                    Architecture designed to grow with your business from startup to enterprise.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="award" class="w-6 h-6 text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1" data-en="International Standards"
+                                    data-es="Estándares Internacionales">International Standards</h4>
+                                <p class="text-gray-400 text-sm"
+                                    data-en="WCAG accessibility, GDPR compliance, and enterprise-grade security practices."
+                                    data-es="Accesibilidad WCAG, cumplimiento GDPR y prácticas de seguridad de nivel empresarial.">
+                                    WCAG accessibility, GDPR compliance, and enterprise-grade security practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative scroll-reveal">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-brand-cyan to-brand-blue rounded-3xl blur-3xl opacity-20">
+                    </div>
+                    <div class="relative glass-card rounded-3xl p-8 border border-white/10">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <div class="glass-card rounded-2xl p-4 border border-white/5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                                            <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                                        </div>
+                                        <span class="text-sm font-medium" data-en="Code Quality"
+                                            data-es="Calidad de Código">Code Quality</span>
+                                    </div>
+                                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-green-400 to-emerald-500 w-[98%] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass-card rounded-2xl p-4 border border-white/5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-brand-blue/20 flex items-center justify-center">
+                                            <i data-lucide="check" class="w-4 h-4 text-brand-blue"></i>
+                                        </div>
+                                        <span class="text-sm font-medium" data-en="Performance"
+                                            data-es="Rendimiento">Performance</span>
+                                    </div>
+                                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-brand-blue to-blue-600 w-[95%] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 mt-8">
+                                <div class="glass-card rounded-2xl p-4 border border-white/5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-brand-violet/20 flex items-center justify-center">
+                                            <i data-lucide="check" class="w-4 h-4 text-brand-violet"></i>
+                                        </div>
+                                        <span class="text-sm font-medium" data-en="Design System"
+                                            data-es="Sistema de Diseño">Design System</span>
+                                    </div>
+                                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-brand-violet to-purple-600 w-[100%] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="glass-card rounded-2xl p-4 border border-white/5">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center">
+                                            <i data-lucide="check" class="w-4 h-4 text-orange-400"></i>
+                                        </div>
+                                        <span class="text-sm font-medium">SEO</span>
+                                    </div>
+                                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                                        <div
+                                            class="h-full bg-gradient-to-r from-orange-400 to-red-500 w-[92%] rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-6 border-t border-white/10">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-400" data-en="Average Project Score"
+                                    data-es="Puntuación Promedio">Average Project Score</span>
+                                <span class="text-2xl font-display font-bold gradient-text">96.3/100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 scroll-reveal">
+                <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Pricing" data-es="Precios">Pricing</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6" data-en="Transparent pricing for every stage" data-es="Precios transparentes para cada etapa">
+                    Transparent pricing for every stage</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8" data-en="Choose your billing preference." data-es="Elige tu preferencia de facturación.">
+                    Choose your billing preference.</p>
+
+                <!-- TOGGLE ONE-TIME / MONTHLY -->
+                <div class="inline-flex items-center gap-2 p-1.5 rounded-full glass-card relative">
+                    <button class="pricing-toggle-btn active relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-onetime" onclick="setPricingMode('onetime')">
+                        <span data-en="One-time" data-es="Único">One-time</span>
+                    </button>
+                    <button class="pricing-toggle-btn relative px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300" id="btn-monthly" onclick="setPricingMode('monthly')">
+                        <span data-en="Monthly" data-es="Mensual">Monthly</span>
+                        <span class="badge-save" data-en="Save 20%" data-es="Ahorra 20%">Save 20%</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de 3 Cards -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+
+                <!-- CARD 1: STARTER -->
+                <div class="flip-card scroll-reveal" id="card-starter">
+                    <div class="flip-card-inner">
+                        <!-- FRENTE -->
+                        <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                                    <i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display text-lg font-bold">Starter</h3>
+                                    <p class="text-xs text-gray-500" data-en="For small projects" data-es="Para proyectos pequeños">For small projects</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$499" data-monthly="$149">$499</span>
+                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-6 flex-grow">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                    <span data-en="Professional landing page" data-es="Landing page profesional">Professional landing page</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                    <span data-en="Responsive design" data-es="Diseño responsive">Responsive design</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                    <span data-en="Basic SEO setup" data-es="SEO básico">Basic SEO setup</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                    <span data-en="Social media integration" data-es="Integración redes sociales">Social media integration</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500">
+                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                    <span data-en="Delivery: 9 days" data-es="Entrega: 9 días">Delivery: 9 days</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex gap-2 mt-auto">
+                                <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('starter')">
+                                    <span data-en="Details" data-es="Detalles">Details</span>
+                                </button>
+                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                    <span data-en="Get Started" data-es="Empezar">Get Started</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- REVERSO -->
+                        <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-emerald-500/30 flex flex-col relative">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="font-display text-lg font-bold text-emerald-400" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
+                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('starter')">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                                <p class="text-sm" data-en="Perfect for startups looking to establish their online presence quickly." data-es="Perfecto para startups que buscan establecer su presencia online rápidamente.">
+                                    Perfect for startups looking to establish their online presence quickly.
+                                </p>
+
+                                <div class="glass-card rounded-lg p-3 bg-emerald-500/5 border-emerald-500/20">
+                                    <h4 class="font-semibold mb-1 text-emerald-400 text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                    <ul class="space-y-2 text-xs mt-2">
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                            <span data-en="1 round of revisions" data-es="1 ronda de revisiones">1 round of revisions</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                            <span data-en="Source files delivered" data-es="Archivos fuente entregados">Source files delivered</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                            <span data-en="30 days support" data-es="30 días de soporte">30 days support</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="w-full py-2.5 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/30 transition-all mt-auto" onclick="flipCard('starter')">
+                                <span data-en="Back" data-es="Volver">Back</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: GROWTH (MOST POPULAR) -->
+                <div class="flip-card scroll-reveal" id="card-growth">
+                    <div class="flip-card-inner">
+                        <!-- FRENTE -->
+                        <div class="flip-card-front pricing-card popular glass-card rounded-3xl p-6 flex flex-col relative">
+                            <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
+
+                            <div class="flex items-center gap-3 mb-4 mt-2">
+                                <div class="w-10 h-10 rounded-xl bg-brand-blue/20 flex items-center justify-center">
+                                    <i data-lucide="trending-up" class="w-5 h-5 text-brand-blue"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display text-lg font-bold">Growth</h3>
+                                    <p class="text-xs text-gray-500" data-en="For growing businesses" data-es="Para negocios en crecimiento">For growing businesses</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="price-display text-3xl font-display font-bold gradient-text" data-onetime="$999" data-monthly="$299">$999</span>
+                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-6 flex-grow">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                    <span data-en="Website up to 5 pages" data-es="Website hasta 5 páginas">Website up to 5 pages</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                    <span data-en="Basic branding package" data-es="Branding básico">Basic branding package</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                    <span data-en="Advanced SEO optimization" data-es="Optimización SEO avanzada">Advanced SEO optimization</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                    <span data-en="Modern animations" data-es="Animaciones modernas">Modern animations</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-cyan flex-shrink-0"></i>
+                                    <span data-en="Form integrations" data-es="Integración formularios">Form integrations</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500">
+                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                    <span data-en="Delivery: 18 days" data-es="Entrega: 18 días">Delivery: 18 days</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex gap-2 mt-auto">
+                                <button class="flex-1 py-2.5 px-4 rounded-full border border-brand-cyan/30 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/10 transition-all" onclick="flipCard('growth')">
+                                    <span data-en="Details" data-es="Detalles">Details</span>
+                                </button>
+                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                    <span class="btn-text" data-en="Get Started" data-es="Empezar">Get Started</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- REVERSO -->
+                        <div class="flip-card-back pricing-card popular glass-card rounded-3xl p-6 border-2 border-brand-cyan/30 flex flex-col relative">
+                            <div class="popular-badge" data-en="MOST POPULAR" data-es="MÁS POPULAR">MOST POPULAR</div>
+
+                            <div class="flex justify-between items-start mb-4 mt-2">
+                                <h3 class="font-display text-lg font-bold text-brand-cyan" data-en="What's Included" data-es="Qué incluye">What's Included</h3>
+                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('growth')">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                                <p class="text-sm" data-en="Ideal for businesses ready to scale with a professional multi-page website." data-es="Ideal para negocios listos para escalar con website profesional.">
+                                    Ideal for businesses ready to scale with a professional multi-page website.
+                                </p>
+
+                                <div class="glass-card rounded-lg p-3 bg-brand-cyan/5 border-brand-cyan/20">
+                                    <h4 class="font-semibold mb-1 text-brand-cyan text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                    <ul class="space-y-2 text-xs mt-2">
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                            <span data-en="3 rounds of revisions" data-es="3 rondas de revisiones">3 rounds of revisions</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                            <span data-en="Brand style guide" data-es="Guía de estilo de marca">Brand style guide</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                            <span data-en="60 days support" data-es="60 días de soporte">60 days support</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-cyan"></i>
+                                            <span data-en="Analytics setup" data-es="Configuración de analytics">Analytics setup</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="w-full py-2.5 rounded-full bg-brand-cyan/20 text-brand-cyan text-sm font-semibold hover:bg-brand-cyan/30 transition-all mt-auto" onclick="flipCard('growth')">
+                                <span data-en="Back" data-es="Volver">Back</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: SCALE -->
+                <div class="flip-card scroll-reveal" id="card-scale">
+                    <div class="flip-card-inner">
+                        <!-- FRENTE -->
+                        <div class="flip-card-front pricing-card glass-card rounded-3xl p-6 flex flex-col relative">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand-violet/20 flex items-center justify-center">
+                                    <i data-lucide="crown" class="w-5 h-5 text-brand-violet"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-display text-lg font-bold">Scale</h3>
+                                    <p class="text-xs text-gray-500" data-en="For enterprises" data-es="Para empresas">For enterprises</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="price-display text-3xl font-display font-bold text-white" data-onetime="$1,799" data-monthly="$549">$1,799</span>
+                                <span class="price-period text-gray-500 text-sm" data-en="/project" data-es="/proyecto">/project</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-6 flex-grow">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                    <span data-en="Advanced web development" data-es="Desarrollo web avanzado">Advanced web development</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                    <span data-en="Custom UI/UX design" data-es="UI/UX personalizado">Custom UI/UX design</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                    <span data-en="Process automations" data-es="Automatizaciones">Process automations</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                    <span data-en="Admin dashboard" data-es="Panel administrativo">Admin dashboard</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <i data-lucide="check" class="w-4 h-4 text-brand-violet flex-shrink-0"></i>
+                                    <span data-en="API integrations" data-es="Integraciones API">API integrations</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-gray-500">
+                                    <i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>
+                                    <span data-en="Custom timeline" data-es="Cronograma personalizado">Custom timeline</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex gap-2 mt-auto">
+                                <button class="flex-1 py-2.5 px-4 rounded-full border border-white/20 text-white text-sm font-semibold hover:bg-white/5 transition-all" onclick="flipCard('scale')">
+                                    <span data-en="Details" data-es="Detalles">Details</span>
+                                </button>
+                                <button class="flex-1 btn-primary py-2.5 px-4 rounded-full text-white text-sm font-semibold">
+                                    <span data-en="Contact Sales" data-es="Contactar Ventas">Contact Sales</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- REVERSO -->
+                        <div class="flip-card-back pricing-card glass-card rounded-3xl p-6 border-2 border-brand-violet/30 flex flex-col relative">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="font-display text-lg font-bold text-brand-violet" data-en="Enterprise Features" data-es="Características Enterprise">Enterprise Features</h3>
+                                <button class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-all" onclick="flipCard('scale')">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <div class="space-y-3 text-sm text-gray-300 mb-4 flex-grow overflow-y-auto">
+                                <p class="text-sm" data-en="Enterprise-grade solution for businesses requiring advanced functionality." data-es="Solución empresarial para negocios que requieren funcionalidad avanzada.">
+                                    Enterprise-grade solution for businesses requiring advanced functionality.
+                                </p>
+
+                                <div class="glass-card rounded-lg p-3 bg-brand-violet/5 border-brand-violet/20">
+                                    <h4 class="font-semibold mb-1 text-brand-violet text-sm" data-en="Includes" data-es="Incluye">Includes</h4>
+                                    <ul class="space-y-2 text-xs mt-2">
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                            <span data-en="Unlimited revisions" data-es="Revisiones ilimitadas">Unlimited revisions</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                            <span data-en="Complete brand book" data-es="Brand book completo">Complete brand book</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                            <span data-en="1 year priority support" data-es="1 año soporte prioritario">1 year priority support</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                            <span data-en="Training sessions" data-es="Sesiones de capacitación">Training sessions</span>
+                                        </li>
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-violet"></i>
+                                            <span data-en="Source code ownership" data-es="Propiedad del código fuente">Source code ownership</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <button class="w-full py-2.5 rounded-full bg-brand-violet/20 text-brand-violet text-sm font-semibold hover:bg-brand-violet/30 transition-all mt-auto" onclick="flipCard('scale')">
+                                <span data-en="Back" data-es="Volver">Back</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 text-sm" data-en="Need something custom?" data-es="¿Necesitas algo personalizado?">Need something custom?</p>
+                <a href="#contact" class="text-brand-cyan hover:underline text-sm font-medium mt-1 inline-block" data-en="Let's talk about your project →" data-es="Hablemos de tu proyecto →">Let's talk about your project →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-blue/5 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 scroll-reveal">
+                <span class="text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-en="Our Process"
+                    data-es="Nuestro Proceso">Our Process</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mt-4 mb-6" data-en="How we bring ideas to life"
+                    data-es="Cómo damos vida a las ideas">How we bring ideas to life</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg"
+                    data-en="A battle-tested methodology refined through 50+ international projects."
+                    data-es="Una metodología probada refinada a través de 50+ proyectos internacionales.">A
+                    battle-tested methodology refined through 50+ international projects.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <div class="process-line hidden md:block"></div>
+
+                <div class="space-y-16">
+                    <!-- Discovery -->
+                    <div class="relative scroll-reveal">
+                        <div class="md:flex items-center gap-8">
+                            <div class="md:w-1/2 md:text-right md:pr-12 mb-4 md:mb-0">
+                                <div
+                                    class="glass-card inline-block p-6 rounded-2xl border border-white/10 md:ml-auto max-w-sm">
+                                    <span
+                                        class="text-brand-cyan font-display font-bold text-5xl opacity-20 absolute -top-4 -right-4">01</span>
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-cyan/20 flex items-center justify-center mb-4 md:ml-auto">
+                                        <i data-lucide="search" class="w-6 h-6 text-brand-cyan"></i>
+                                    </div>
+                                    <h3 class="font-display text-2xl font-bold mb-2" data-en="Discovery"
+                                        data-es="Descubrimiento">Discovery</h3>
+                                    <p class="text-gray-400 text-sm"
+                                        data-en="Deep dive into your business, audience, and goals. We define success metrics and project scope."
+                                        data-es="Inmersión profunda en tu negocio, audiencia y objetivos. Definimos métricas de éxito y alcance del proyecto.">
+                                        Deep dive into your business, audience, and goals. We define success metrics and
+                                        project scope.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="hidden md:flex w-8 h-8 rounded-full bg-brand-cyan items-center justify-center z-10 flex-shrink-0 shadow-lg shadow-brand-cyan/50">
+                                <span class="text-dark-bg font-bold text-sm">1</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                        </div>
+                    </div>
+
+                    <!-- Design -->
+                    <div class="relative scroll-reveal">
+                        <div class="md:flex items-center gap-8">
+                            <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                            <div
+                                class="hidden md:flex w-8 h-8 rounded-full bg-brand-blue items-center justify-center z-10 flex-shrink-0 shadow-lg shadow-brand-blue/50">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+                                <div class="glass-card inline-block p-6 rounded-2xl border border-white/10 max-w-sm">
+                                    <span
+                                        class="text-brand-blue font-display font-bold text-5xl opacity-20 absolute -top-4 -left-4">02</span>
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-blue/20 flex items-center justify-center mb-4">
+                                        <i data-lucide="pen-tool" class="w-6 h-6 text-brand-blue"></i>
+                                    </div>
+                                    <h3 class="font-display text-2xl font-bold mb-2" data-en="Design" data-es="Diseño">
+                                        Design</h3>
+                                    <p class="text-gray-400 text-sm"
+                                        data-en="Wireframes evolve into high-fidelity designs. We iterate based on your feedback until perfect."
+                                        data-es="Los wireframes evolucionan en diseños de alta fidelidad. Iteramos basándonos en tu feedback hasta perfeccionar.">
+                                        Wireframes evolve into high-fidelity designs. We iterate based on your feedback
+                                        until perfect.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development -->
+                    <div class="relative scroll-reveal">
+                        <div class="md:flex items-center gap-8">
+                            <div class="md:w-1/2 md:text-right md:pr-12 mb-4 md:mb-0">
+                                <div
+                                    class="glass-card inline-block p-6 rounded-2xl border border-white/10 md:ml-auto max-w-sm">
+                                    <span
+                                        class="text-brand-violet font-display font-bold text-5xl opacity-20 absolute -top-4 -right-4">03</span>
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-brand-violet/20 flex items-center justify-center mb-4 md:ml-auto">
+                                        <i data-lucide="code-2" class="w-6 h-6 text-brand-violet"></i>
+                                    </div>
+                                    <h3 class="font-display text-2xl font-bold mb-2" data-en="Development"
+                                        data-es="Desarrollo">Development</h3>
+                                    <p class="text-gray-400 text-sm"
+                                        data-en="Clean, scalable code with weekly demos. We build with modern stacks optimized for performance."
+                                        data-es="Código limpio y escalable con demos semanales. Construimos con stacks modernos optimizados para rendimiento.">
+                                        Clean, scalable code with weekly demos. We build with modern stacks optimized
+                                        for performance.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="hidden md:flex w-8 h-8 rounded-full bg-brand-violet items-center justify-center z-10 flex-shrink-0 shadow-lg shadow-brand-violet/50">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                        </div>
+                    </div>
+
+                    <!-- Launch -->
+                    <div class="relative scroll-reveal">
+                        <div class="md:flex items-center gap-8">
+                            <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                            <div
+                                class="hidden md:flex w-8 h-8 rounded-full bg-emerald-500 items-center justify-center z-10 flex-shrink-0 shadow-lg shadow-emerald-500/50">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+                                <div class="glass-card inline-block p-6 rounded-2xl border border-white/10 max-w-sm">
+                                    <span
+                                        class="text-emerald-500 font-display font-bold text-5xl opacity-20 absolute -top-4 -left-4">04</span>
+                                    <div
+                                        class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
+                                        <i data-lucide="rocket" class="w-6 h-6 text-emerald-400"></i>
+                                    </div>
+                                    <h3 class="font-display text-2xl font-bold mb-2" data-en="Launch"
+                                        data-es="Lanzamiento">Launch</h3>
+                                    <p class="text-gray-400 text-sm"
+                                        data-en="Deployment, optimization, and handover. We ensure your product is market-ready and future-proof."
+                                        data-es="Despliegue, optimización y entrega. Nos aseguramos de que tu producto esté listo para el mercado y preparado para el futuro.">
+                                        Deployment, optimization, and handover. We ensure your product is market-ready
+                                        and future-proof.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-cyan/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-reveal">
+            <h2 class="font-display text-5xl md:text-6xl font-bold mb-6" data-en="Ready to grow digitally?"
+                data-es="¿Listo para crecer digitalmente?">Ready to grow digitally?</h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto"
+                data-en="Let's discuss how SoftDeMA can transform your digital presence and accelerate your business growth."
+                data-es="Discutamos cómo SoftDeMA puede transformar tu presencia digital y acelerar el crecimiento de tu negocio.">
+                Let's discuss how SoftDeMA can transform your digital presence and accelerate your business growth.</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="mailto:hello@softdema.com"
+                    class="btn-primary px-8 py-4 rounded-full text-lg font-semibold text-white inline-flex items-center gap-2">
+                    <span data-en="Start your project" data-es="Iniciar tu proyecto">Start your project</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="https://calendly.com" target="_blank"
+                    class="px-8 py-4 rounded-full text-lg font-semibold text-white border border-white/20 hover:bg-white/5 transition-all inline-flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    <span data-en="Schedule a call" data-es="Agendar llamada">Schedule a call</span>
+                </a>
+            </div>
+
+            <div class="glass-card inline-flex items-center gap-4 px-6 py-3 rounded-full border border-white/10">
+                <div class="flex -space-x-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-blue to-brand-cyan border-2 border-dark-bg">
+                    </div>
+                    <div
+                        class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-violet to-purple-600 border-2 border-dark-bg">
+                    </div>
+                    <div
+                        class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 border-2 border-dark-bg">
+                    </div>
+                </div>
+                <span class="text-sm text-gray-400" data-en="Join 50+ happy clients"
+                    data-es="Únete a 50+ clientes felices">Join 50+ happy clients</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center">
+                            <span class="font-display font-bold text-white text-lg">S</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-display font-bold text-xl tracking-tight">SoftDeMA</span>
+                            <span class="text-xs text-gray-500 tracking-wider">SOFTWARE • DESIGN • MARKETING</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6"
+                        data-en="Building digital growth for international clients. Based in Colombia, serving the world."
+                        data-es="Construyendo crecimiento digital para clientes internacionales. Con sede en Colombia, sirviendo al mundo.">
+                        Building digital growth for international clients. Based in Colombia, serving the world.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-gray-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5 text-gray-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition-all">
+                            <i data-lucide="twitter" class="w-5 h-5 text-gray-400"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition-all">
+                            <i data-lucide="github" class="w-5 h-5 text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4" data-en="Services" data-es="Servicios">Services</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors" data-en="Web Development"
+                                data-es="Desarrollo Web">Web Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors" data-en="App Development"
+                                data-es="Desarrollo de Apps">App Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors" data-en="Branding"
+                                data-es="Branding">Branding</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors" data-en="Marketing"
+                                data-es="Marketing">Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4" data-en="Contact" data-es="Contacto">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:hello@softdema.com"
+                                class="hover:text-white transition-colors">hello@softdema.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Colombia / USA</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            <span data-en="Mon-Fri: 9AM-6PM EST" data-es="Lun-Vie: 9AM-6PM EST">Mon-Fri: 9AM-6PM
+                                EST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">© 2024 SoftDeMA Digital Solutions. <span data-en="All rights reserved."
+                        data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+                <p class="text-sm text-gray-500" data-en="Operated by SoftDeMA Digital Solutions"
+                    data-es="Operado por SoftDeMA Digital Solutions">Operated by SoftDeMA Digital Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
